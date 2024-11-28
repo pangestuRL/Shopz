@@ -1,5 +1,4 @@
-import { useEffect } from "react";
-import { useState } from "react"
+import { useEffect, useState } from "react";
 
 /* Daftar Tugas Anda */
 /*
@@ -21,7 +20,7 @@ import { useState } from "react"
   2. wajib sharescreen ketika sedang mengerjakan
   3. diperbolehkan untuk melakukan pencarian di internet, kecuali tools AI
   4. tidak diperkenankan berdiskusi, hanya boleh bertanya seputar tugas
-  4. waktu pengerjaan hanya 50 menit, dimulai dari kandidat mulai mengerjakan
+  5. waktu pengerjaan hanya 50 menit, dimulai dari kandidat mulai mengerjakan
 */
 
 /* URL Dokumentasi API : https://dummyjson.com/docs/products */
