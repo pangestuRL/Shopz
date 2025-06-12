@@ -4,7 +4,6 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300 text-sm px-4 mt-4">
       <div className="container mx-auto px-4 py-12 flex justify-between gap-10">
-        {/* Company Info */}
         <div className="w-80">
           <h1 className="text-2xl font-bold text-white mb-4">Shopz</h1>
           <p className="text-justify">
@@ -14,7 +13,6 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* About Us */}
         <div>
           <h3 className="text-white font-semibold mb-4">About Us</h3>
           <ul className="space-y-2">
@@ -27,7 +25,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Help */}
         <div>
           <h3 className="text-white font-semibold mb-4">Help</h3>
           <ul className="space-y-2">
@@ -40,7 +37,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Account */}
         <div>
           <h3 className="text-white font-semibold mb-4">Account</h3>
           <ul className="space-y-2">
@@ -50,7 +46,6 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Social Media */}
         <div>
           <h3 className="text-white font-semibold mb-4">Social Media</h3>
           <div className="flex flex-col space-y-2">

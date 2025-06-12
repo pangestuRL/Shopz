@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CategoryPage from "./pages/CategoryPage";
 import ProductDetail from './pages/ProductDetail';
+import CreateProduct from './pages/CreateProduct';
 
 export default function App() {
 
@@ -12,6 +13,7 @@ export default function App() {
       <Routes>
         <Route path="/category/:category" element={<CategoryPage/>} />
         <Route path="/product/:id" element={<ProductDetail/>} />
+        <Route path="/create" element={<CreateProduct />} />
       </Routes>
       <Footer/>
     </Router>   

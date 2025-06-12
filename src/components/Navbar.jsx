@@ -1,18 +1,17 @@
 import { useState, useEffect } from 'react';
 import { HiOutlineSearch, HiOutlineBell, HiOutlineHeart, HiOutlineShoppingCart } from 'react-icons/hi';
+import { HiOutlinePlus } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [categories, setCategories] = useState([]);
 
-  // Ambil data kategori dari API saat komponen dimuat
   useEffect(() => {
     fetch('https://dummyjson.com/products/category-list')
       .then(res => res.json())
-      .then(data => setCategories(data)); // Set data kategori ke state
+      .then(data => setCategories(data));
   }, []);
 
-  // Kelompokkan kategori yang relevan
   const groupedCategories = {
     'Men': ['mens-shirts', 'mens-shoes', 'mens-watches'],
     'Women': ['womens-bags', 'womens-dresses', 'womens-jewellery', 'womens-shoes', 'womens-watches'],
@@ -30,7 +29,6 @@ export default function Navbar() {
           <h1 className="text-2xl font-bold text-green-600">Shopz</h1>
 
           <div className="hidden md:flex space-x-8 font-medium text-gray-700">
-            {/* Dropdown for Home */}
             <div className="relative group">
               <button className="hover:text-green-600 text-sm">
                 Home
@@ -48,7 +46,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Dropdown for Men */}
             <div className="relative group">
               <button className="hover:text-green-600 text-sm">
                 Men
@@ -66,7 +63,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Dropdown for Women */}
             <div className="relative group">
               <button className="hover:text-green-600 text-sm">
                 Women
@@ -84,7 +80,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Dropdown for Beauty & Health */}
             <div className="relative group">
               <button className="hover:text-green-600 text-sm">
                 Beauty & Health
@@ -102,7 +97,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Dropdown for  Fashion & Accessories*/}
             <div className="relative group">
               <button className="hover:text-green-600 text-sm">
                 Fashion & Accessories
@@ -120,7 +114,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Dropdown for Electronics */}
             <div className="relative group">
               <button className="hover:text-green-600 text-sm">
                 Electronics
@@ -138,7 +131,6 @@ export default function Navbar() {
               </div>
             </div>
 
-            {/* Dropdown for Vehicle & Accessories */}
             <div className="relative group">
               <button className="hover:text-green-600 text-sm">
                 Vehicle & Accessories
@@ -161,6 +153,13 @@ export default function Navbar() {
           <HiOutlineBell className="w-5 h-5 text-white stroke-gray-500 stroke-2 hover:stroke-green-600" />
           <HiOutlineHeart className="w-5 h-5 text-white stroke-gray-500 stroke-2 hover:stroke-green-600" />
           <HiOutlineShoppingCart className="w-5 h-5 text-white stroke-gray-500 stroke-2 hover:stroke-green-600" />
+          <Link
+            to="/create"
+            className="text-gray-500 hover:text-green-600 transition"
+            title="Add New Product"
+          >
+            <HiOutlinePlus className="text-xl" />
+          </Link>
           <img
             src="https://i.pravatar.cc/32"
             alt="Profile"
