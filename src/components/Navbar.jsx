@@ -26,7 +26,7 @@ export default function Navbar() {
     <nav className="bg-white shadow-sm">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <div className="flex space-x-10 items-center">
-          <h1 className="text-2xl font-bold text-green-600">Shopz</h1>
+          <Link to={'/'} className="text-2xl font-bold text-green-600">Shopz</Link>
 
           <div className="hidden md:flex space-x-8 font-medium text-gray-700">
             <div className="relative group">
