@@ -7,17 +7,9 @@ export default function CreateProduct() {
     title: '',
     description: '',
     price: '',
-    discountPercentage:'',
-    rating:'',
     brand: '',
-    stock:'',
     category: '',
     thumbnail: '',
-    weight:'',
-    dimensions:'',
-    warranty:'',
-    shipping:'',
-    status:'',
   });
 
   const handleChange = (e) => {

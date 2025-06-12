@@ -36,7 +36,6 @@ export default function ProductDetail() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Breadcrumb */}
       <nav className="flex items-center text-sm text-gray-500 mb-6">
         <Link to="/" className="hover:text-green-600 font-medium">Home</Link>
         <FiChevronRight className="mx-2 text-gray-400" />
@@ -47,9 +46,7 @@ export default function ProductDetail() {
         <span className="text-gray-800 font-semibold truncate">{product.title}</span>
       </nav>
 
-      {/* Detail Content */}
       <div className="grid md:grid-cols-2 gap-6">
-        {/* Gambar produk */}
         <div className="bg-white p-4 rounded-lg shadow-sm flex items-center justify-center">
           <img
             src={product.images?.[0] || product.thumbnail}
@@ -58,7 +55,6 @@ export default function ProductDetail() {
           />
         </div>
 
-        {/* Informasi produk */}
         <div>
           <h1 className="text-2xl md:text-3xl font-bold mb-2">{product.title}</h1>
           <p className="text-gray-600 mb-4">{product.description}</p>
@@ -91,7 +87,6 @@ export default function ProductDetail() {
             Add to Cart
           </button>
 
-          {/* Share Buttons */}
           <div className="mt-4 flex items-center gap-3">
             <span className="text-sm text-gray-600">Share:</span>
             <FacebookShareButton url={shareUrl}><FacebookIcon size={32} round /></FacebookShareButton>
@@ -101,7 +96,6 @@ export default function ProductDetail() {
         </div>
       </div>
 
-      {/* Reviews */}
       <div className="mt-10">
         <h2 className="text-xl font-bold mb-4">Customer Reviews</h2>
         {product.reviews?.length > 0 ? (
@@ -124,7 +118,6 @@ export default function ProductDetail() {
         )}
       </div>
 
-      {/* Related Products */}
         {related.length > 0 && (
         <div className="mt-12">
             <h2 className="text-xl font-bold mb-4">Related Products</h2>

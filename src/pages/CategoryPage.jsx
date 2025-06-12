@@ -8,12 +8,8 @@ export default function CategoryPage() {
   const { category } = useParams();
   const [allProducts, setAllProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-
-  // Pagination
   const [currentPage, setCurrentPage] = useState(1);
   const productsPerPage = 12;
-
-  // Search, filter, sort
   const [searchQuery, setSearchQuery] = useState('');
   const [priceFilter, setPriceFilter] = useState('');
   const [sortOrder, setSortOrder] = useState('');
@@ -25,7 +21,7 @@ export default function CategoryPage() {
       .then(data => {
         setAllProducts(data.products);
         setIsLoading(false);
-        setCurrentPage(1); // reset ke halaman 1 saat category berubah
+        setCurrentPage(1);
       });
   }, [category]);
 
@@ -60,7 +56,6 @@ export default function CategoryPage() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
-      {/* Breadcrumb */}
       <nav className="flex items-center text-sm text-gray-500 mb-6">
         <Link to="/" className="hover:text-green-600 font-medium">Home</Link>
         <FiChevronRight className="mx-2 text-gray-400" />
@@ -73,7 +68,6 @@ export default function CategoryPage() {
         {category.replace('-', ' ')}
       </h2>
 
-      {/* Filter & Search */}
       <div className="flex flex-wrap justify-center items-center gap-4 mb-6">
         <input
           type="text"
@@ -100,7 +94,6 @@ export default function CategoryPage() {
         </select>
       </div>
 
-      {/* Produk Grid */}
       {isLoading ? (
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {Array.from({ length: productsPerPage }).map((_, i) => (
@@ -122,7 +115,6 @@ export default function CategoryPage() {
         </div>
       )}
 
-      {/* Pagination */}
       {!isLoading && (
         <div className="flex justify-center items-center gap-4 mt-8 text-sm text-gray-600">
           <button

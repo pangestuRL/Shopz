@@ -1,12 +1,22 @@
 import { Link } from 'react-router-dom';
+import {useState} from 'react';
+import {FiHeart} from 'react-icons/fi';
+import {FaHeart} from 'react-icons/fa';
+
 
 export default function CardProduct({ product }) {
   const finalPrice = product.price - (product.price * product.discountPercentage) / 100;
+  const [liked, setLiked] = useState(false);
+  const toggleLike = (e) => {
+    e.preventDefault();
+    setLiked(prev => !prev);
+  }
 
   return (
+    <div className="relative w-full max-w-xs">
+        <button onClick={toggleLike} className="absolute z-20 hover:text-red-500 transition">{liked ? (<FaHeart className="w-5 h-5 text-red-500"/>) : (<FiHeart className="w-5 h-5 text-gray-500"/>)}</button>
     <Link to={`/product/${product.id}`}>
-        <div className="group bg-white rounded-xl shadow-md overflow-hidden transition-transform transform hover:scale-105 duration-300 w-full max-w-xs flex flex-col justify-between">
-            {/* Gambar Produk */}
+        <div className="relative group bg-white rounded-xl shadow-md overflow-hidden transition-transform transform hover:scale-105 duration-300 w-full max-w-xs flex flex-col justify-between">
             <div className="h-36 bg-white flex items-center justify-center">
                 <img
                 src={product.thumbnail}
@@ -15,7 +25,6 @@ export default function CardProduct({ product }) {
                 />
             </div>
 
-            {/* Info Produk */}
             <div className="p-4 flex flex-col flex-grow">
                 <h3 className="text-sm font-semibold truncate" title={product.title}>
                 {product.title}
@@ -31,7 +40,6 @@ export default function CardProduct({ product }) {
                     </span>
                 </div>
 
-                {/* Tombol muncul saat hover */}
                 <div className="hidden group-hover:flex">
                 <button
                     onClick={() => alert(`Added "${product.title}" to cart`)}
@@ -43,5 +51,6 @@ export default function CardProduct({ product }) {
             </div>
         </div>
     </Link>
+    </div>
   );
 }

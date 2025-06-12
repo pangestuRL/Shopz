@@ -2,7 +2,7 @@ import { FaTwitter, FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300 text-sm px-4 mt-4">
+    <footer className="flex flex-wrap grid-cols-2 bg-gray-900 text-gray-300 text-sm px-4 mt-4">
       <div className="container mx-auto px-4 py-12 flex justify-between gap-10">
         <div className="w-80">
           <h1 className="text-2xl font-bold text-white mb-4">Shopz</h1>
